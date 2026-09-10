@@ -1,0 +1,77 @@
+# WeSheildSiem pipeline configuration.
+# Loaded and validated by src/siem/config.py (pydantic models).
+# This is a reference config — adjust to your environment.
+
+queue:
+  url: "redis://localhost:6379/0"
+  raw_stream: "siem:raw"
+  deadletter_stream: "siem:deadletter"
+  consumer_group: "pipeline"
+  # backpressure: stop reading new raw events when the group's pending count exceeds this
+  max_pending: 5000
+
+output:
+  hosts: ["http://localhost:9200"]
+  data_stream: "logs-generic-default"
+  deadletter_index: "siem-deadletter"
+  bulk_max_actions: 500
+  bulk_flush_interval_seconds: 2
+  retry_max_attempts: 5
+
+workers:
+  count: 4
+
+metrics:
+  host: "0.0.0.0"
+  port: 8000
+
+enrich:
+  geoip:
+    enabled: false          # set true once GeoLite2-City.mmdb is present
+    database_path: "./GeoLite2-City.mmdb"
+  assets:
+    # static host -> metadata map used by enrich/asset.py
+    "web-01":
+      host.name: "web-01.corp.local"
+      labels: { env: "prod", role: "web" }
+    "10.0.0.5":
+      host.name: "bastion"
+      labels: { env: "prod", role: "jump-host" }
+
+inputs:
+  - type: syslog
+    name: syslog-udp
+    protocol: udp
+    host: "0.0.0.0"
+    port: 514
+    default_source: "syslog"
+
+  - type: syslog
+    name: syslog-tcp
+    protocol: tcp
+    host: "0.0.0.0"
+    port: 514
+
+  - type: filetail
+    name: nginx-access
+    path: "/var/log/nginx/access.log"
+    source: "nginx_access"
+    offset_store: ".state/nginx-access.offset"
+
+  - type: http_api
+    name: http-ingest
+    host: "0.0.0.0"
+    port: 9000
+    # clients POST newline-delimited or JSON events to /ingest?source=<name>
+
+# source -> parser routing. The pipeline picks the first matching rule.
+# parser types: json | regex | grok | builtin
+routing:
+  - match: { source: "sshd" }
+    parser: { type: builtin, name: "sshd" }
+  - match: { source: "nginx_access" }
+    parser: { type: builtin, name: "nginx_access" }
+  - match: { source: "syslog" }
+    parser: { type: builtin, name: "syslog_generic" }
+  - match: { source: "*" }            # fallback
+    parser: { type: json }

@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# uv
+uv.lock
+
+# Project runtime state
+.state/
+*.offset
+data/
+logs/
+
+# GeoIP databases (downloaded separately)
+*.mmdb
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,37 @@
+{
+  "policy": {
+    "policy_id": "siem-logs-retention",
+    "description": "Lab retention for WeSheildSiem log data streams: rollover then delete after 30 days.",
+    "default_state": "hot",
+    "states": [
+      {
+        "name": "hot",
+        "actions": [
+          {
+            "rollover": {
+              "min_size": "5gb",
+              "min_index_age": "1d"
+            }
+          }
+        ],
+        "transitions": [
+          {
+            "state_name": "delete",
+            "conditions": { "min_index_age": "30d" }
+          }
+        ]
+      },
+      {
+        "name": "delete",
+        "actions": [{ "delete": {} }],
+        "transitions": []
+      }
+    ],
+    "ism_template": [
+      {
+        "index_patterns": ["logs-*"],
+        "priority": 100
+      }
+    ]
+  }
+}

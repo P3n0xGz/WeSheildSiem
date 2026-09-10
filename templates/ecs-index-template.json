@@ -1,0 +1,140 @@
+{
+  "index_patterns": ["logs-*"],
+  "data_stream": {},
+  "priority": 200,
+  "template": {
+    "settings": {
+      "index.number_of_shards": 1,
+      "index.number_of_replicas": 0,
+      "index.refresh_interval": "5s",
+      "index.mapping.total_fields.limit": 2000,
+      "index.plugins.index_state_management.policy_id": "siem-logs-retention"
+    },
+    "mappings": {
+      "dynamic": "true",
+      "date_detection": false,
+      "properties": {
+        "@timestamp": { "type": "date" },
+        "message": { "type": "match_only_text" },
+        "tags": { "type": "keyword" },
+        "labels": { "type": "object" },
+        "ecs": { "properties": { "version": { "type": "keyword" } } },
+
+        "event": {
+          "properties": {
+            "kind": { "type": "keyword" },
+            "category": { "type": "keyword" },
+            "type": { "type": "keyword" },
+            "action": { "type": "keyword" },
+            "outcome": { "type": "keyword" },
+            "dataset": { "type": "keyword" },
+            "module": { "type": "keyword" },
+            "provider": { "type": "keyword" },
+            "severity": { "type": "long" },
+            "original": { "type": "keyword", "index": false, "doc_values": false },
+            "created": { "type": "date" },
+            "ingested": { "type": "date" }
+          }
+        },
+
+        "log": {
+          "properties": {
+            "level": { "type": "keyword" },
+            "syslog": {
+              "properties": {
+                "facility": { "properties": { "code": { "type": "long" }, "name": { "type": "keyword" } } },
+                "severity": { "properties": { "code": { "type": "long" }, "name": { "type": "keyword" } } },
+                "priority": { "type": "long" }
+              }
+            }
+          }
+        },
+
+        "host": {
+          "properties": {
+            "name": { "type": "keyword" },
+            "hostname": { "type": "keyword" },
+            "ip": { "type": "ip" }
+          }
+        },
+
+        "source": {
+          "properties": {
+            "ip": { "type": "ip" },
+            "port": { "type": "long" },
+            "bytes": { "type": "long" },
+            "domain": { "type": "keyword" },
+            "geo": {
+              "properties": {
+                "country_iso_code": { "type": "keyword" },
+                "country_name": { "type": "keyword" },
+                "city_name": { "type": "keyword" },
+                "location": { "type": "geo_point" }
+              }
+            }
+          }
+        },
+
+        "destination": {
+          "properties": {
+            "ip": { "type": "ip" },
+            "port": { "type": "long" },
+            "bytes": { "type": "long" },
+            "domain": { "type": "keyword" }
+          }
+        },
+
+        "user": {
+          "properties": {
+            "name": { "type": "keyword" },
+            "id": { "type": "keyword" },
+            "domain": { "type": "keyword" }
+          }
+        },
+
+        "network": {
+          "properties": {
+            "transport": { "type": "keyword" },
+            "protocol": { "type": "keyword" }
+          }
+        },
+
+        "http": {
+          "properties": {
+            "request": { "properties": { "method": { "type": "keyword" }, "referrer": { "type": "keyword" } } },
+            "response": { "properties": { "status_code": { "type": "long" }, "body": { "properties": { "bytes": { "type": "long" } } } } },
+            "version": { "type": "keyword" }
+          }
+        },
+
+        "url": {
+          "properties": {
+            "original": { "type": "wildcard" },
+            "path": { "type": "wildcard" },
+            "query": { "type": "keyword" }
+          }
+        },
+
+        "user_agent": {
+          "properties": { "original": { "type": "keyword" } }
+        },
+
+        "related": {
+          "properties": {
+            "ip": { "type": "ip" },
+            "user": { "type": "keyword" },
+            "hosts": { "type": "keyword" }
+          }
+        },
+
+        "observer": {
+          "properties": {
+            "vendor": { "type": "keyword" },
+            "product": { "type": "keyword" },
+            "type": { "type": "keyword" }
+          }
+        }
+      }
+    }
+  }
+}
