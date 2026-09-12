@@ -359,10 +359,10 @@ Run: `uv run pytest tests/test_schema.py -q`.
 
 ## 11. Implementation checklist (do in this order)
 
-- [ ] Module constants: `ECS_VERSION`, categorization tuples/`Literal`s.
-- [ ] Helpers: `now_utc`, `to_utc`, `canonical_json`.
-- [ ] `RawEnvelope` + validators + `to_stream_fields` / `from_stream_fields`.
-- [ ] Write the `RawEnvelope` tests; make them pass.
+- [x] Module constants: `ECS_VERSION`, categorization tuples/`Literal`s.
+- [x] Helpers: `now_utc`, `to_utc`, `canonical_json`.
+- [x] `RawEnvelope` + validators + `to_stream_fields` / `from_stream_fields`.
+- [x] Write the `RawEnvelope` tests; make them pass.
 - [ ] Leaf sub-models: `Geo`, `Related`, `Observer`, `LogMeta`, `EventMeta`, `Http`, `Url`.
 - [ ] Composite sub-models: `Source`, `Destination`, `Host`, `User`.
 - [ ] `Event` with all fieldsets, `model_config`, aliases.
