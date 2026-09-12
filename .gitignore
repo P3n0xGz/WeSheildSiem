@@ -28,3 +28,7 @@ logs/
 .idea/
 .vscode/
 .DS_Store
+
+.claude
+graphify-out/
+CLAUDE.md

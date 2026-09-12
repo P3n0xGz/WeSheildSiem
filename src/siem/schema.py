@@ -1,15 +1,6 @@
 from __future__ import annotations
-import hashlib
-import json
-from datetime import datetime, timezone, tzinfo
-from ipaddress import ip_address
-from typing import Any
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
-
-ECS_VERSION = "8.11"
-from __future__ import annotations
 import hashlib, json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, tzinfo 
 from ipaddress import ip_address
 from typing import Any
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -36,7 +27,7 @@ def to_utc(value: str | datetime | int | float) -> str:
             return dt.replace(tzinfo=timezone.utc).isoformat()
         return dt.astimezone(timezone.utc).isoformat()
     raise ValueError(f"Invalid value for to_utc: {value}")
-
+    
 def canonical_json(obj: Any) -> str:
     """Produces sorted, deterministic JSON text with no extra spaces."""
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), default=str)
