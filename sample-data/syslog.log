@@ -1,0 +1,75 @@
+<34>Oct 11 22:14:15 srv-bastion-01 sshd[1234]: session opened for user shady by (uid=0)
+<34>Oct 11 22:14:20 srv-bastion-01 sshd[1234]: session closed for user shady
+<86>Oct 11 22:15:01 srv-bastion-01 CROND[4512]: (root) CMD (/usr/local/bin/check_disks.sh)
+<86>Oct 11 22:15:05 srv-bastion-01 CROND[4515]: (root) CMD (/usr/lib64/sa/sa1 1 1)
+<30>Oct 11 22:16:30 srv-app-01 systemd[1]: Starting Daily apt download activities...
+<30>Oct 11 22:16:32 srv-app-01 systemd[1]: apt-daily.service: Deactivated successfully.
+<30>Oct 11 22:16:33 srv-app-01 systemd[1]: Finished Daily apt download activities.
+<13>Oct 11 22:17:00 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/docker compose ps
+<13>Oct 11 22:17:15 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+<13>Oct 11 22:17:45 srv-app-01 sudo:   deploy : TTY=pts/1 ; PWD=/opt/siem ; USER=root ; COMMAND=/usr/bin/git pull
+<4>Oct 11 22:18:12 srv-web-01 kernel: [12345.678] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54321 PROTO=TCP SPT=49152 DPT=23 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:15 srv-web-01 kernel: [12348.912] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54322 PROTO=TCP SPT=49153 DPT=445 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:18 srv-web-01 kernel: [12351.104] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54323 PROTO=TCP SPT=49154 DPT=3389 WINDOW=1024 RES=0x00 SYN URGP=0
+<165>Oct 11 22:19:00 srv-auth-01 auditd[800]: Audit daemon rotating log files
+<165>Oct 11 22:19:05 srv-auth-01 auditd[800]: Init complete, auditd 3.0.7 listening for events
+<34>Oct 11 22:20:00 srv-vpn-01 openvpn[2341]: 192.168.1.100:54123 [shady] Peer Connection Initiated with [AF_INET]192.168.1.100:54123
+<34>Oct 11 22:20:02 srv-vpn-01 openvpn[2341]: shady/192.168.1.100:54123 MULTI: Learn: 10.8.0.6 -> shady/192.168.1.100:54123
+<165>1 2026-09-19T04:20:00.123Z srv-k8s-master auditd 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application"] user root granted sudo
+<134>1 2026-09-19T04:20:05.456Z srv-k8s-node-01 kubelet 2451 ID99 - Started container frontend in pod frontend-6d4b9c8b8-7x8z2
+<134>1 2026-09-19T04:20:08.789Z srv-k8s-node-01 kubelet 2451 ID99 - Container frontend exited with code 0
+<165>1 2026-09-19T04:21:00.000Z srv-db-master postgres 5432 - - LOG: statement: SELECT count(*) FROM siem_events WHERE status = 'active';
+<165>1 2026-09-19T04:21:15.111Z srv-db-master postgres 5432 - - LOG: checkpoint starting: time
+<165>1 2026-09-19T04:21:20.222Z srv-db-master postgres 5432 - - LOG: checkpoint complete: wrote 142 buffers (0.9%); 0 WAL file(s) added, 0 removed, 1 recycled
+MALFORMED_SYSLOG_LINE_MISSING_HEADER_ENTIRELY
+<99999>InvalidPriorityAndMissingFields
+<34>Oct 11 22:14:15 srv-bastion-01 sshd[1234]: session opened for user shady by (uid=0)
+<34>Oct 11 22:14:20 srv-bastion-01 sshd[1234]: session closed for user shady
+<86>Oct 11 22:15:01 srv-bastion-01 CROND[4512]: (root) CMD (/usr/local/bin/check_disks.sh)
+<86>Oct 11 22:15:05 srv-bastion-01 CROND[4515]: (root) CMD (/usr/lib64/sa/sa1 1 1)
+<30>Oct 11 22:16:30 srv-app-01 systemd[1]: Starting Daily apt download activities...
+<30>Oct 11 22:16:32 srv-app-01 systemd[1]: apt-daily.service: Deactivated successfully.
+<30>Oct 11 22:16:33 srv-app-01 systemd[1]: Finished Daily apt download activities.
+<13>Oct 11 22:17:00 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/docker compose ps
+<13>Oct 11 22:17:15 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+<13>Oct 11 22:17:45 srv-app-01 sudo:   deploy : TTY=pts/1 ; PWD=/opt/siem ; USER=root ; COMMAND=/usr/bin/git pull
+<4>Oct 11 22:18:12 srv-web-01 kernel: [12345.678] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54321 PROTO=TCP SPT=49152 DPT=23 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:15 srv-web-01 kernel: [12348.912] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54322 PROTO=TCP SPT=49153 DPT=445 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:18 srv-web-01 kernel: [12351.104] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54323 PROTO=TCP SPT=49154 DPT=3389 WINDOW=1024 RES=0x00 SYN URGP=0
+<165>Oct 11 22:19:00 srv-auth-01 auditd[800]: Audit daemon rotating log files
+<165>Oct 11 22:19:05 srv-auth-01 auditd[800]: Init complete, auditd 3.0.7 listening for events
+<34>Oct 11 22:20:00 srv-vpn-01 openvpn[2341]: 192.168.1.100:54123 [shady] Peer Connection Initiated with [AF_INET]192.168.1.100:54123
+<34>Oct 11 22:20:02 srv-vpn-01 openvpn[2341]: shady/192.168.1.100:54123 MULTI: Learn: 10.8.0.6 -> shady/192.168.1.100:54123
+<165>1 2026-09-19T04:20:00.123Z srv-k8s-master auditd 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application"] user root granted sudo
+<134>1 2026-09-19T04:20:05.456Z srv-k8s-node-01 kubelet 2451 ID99 - Started container frontend in pod frontend-6d4b9c8b8-7x8z2
+<134>1 2026-09-19T04:20:08.789Z srv-k8s-node-01 kubelet 2451 ID99 - Container frontend exited with code 0
+<165>1 2026-09-19T04:21:00.000Z srv-db-master postgres 5432 - - LOG: statement: SELECT count(*) FROM siem_events WHERE status = 'active';
+<165>1 2026-09-19T04:21:15.111Z srv-db-master postgres 5432 - - LOG: checkpoint starting: time
+<165>1 2026-09-19T04:21:20.222Z srv-db-master postgres 5432 - - LOG: checkpoint complete: wrote 142 buffers (0.9%); 0 WAL file(s) added, 0 removed, 1 recycled
+MALFORMED_SYSLOG_LINE_MISSING_HEADER_ENTIRELY
+<99999>InvalidPriorityAndMissingFields
+<34>Oct 11 22:14:15 srv-bastion-01 sshd[1234]: session opened for user shady by (uid=0)
+<34>Oct 11 22:14:20 srv-bastion-01 sshd[1234]: session closed for user shady
+<86>Oct 11 22:15:01 srv-bastion-01 CROND[4512]: (root) CMD (/usr/local/bin/check_disks.sh)
+<86>Oct 11 22:15:05 srv-bastion-01 CROND[4515]: (root) CMD (/usr/lib64/sa/sa1 1 1)
+<30>Oct 11 22:16:30 srv-app-01 systemd[1]: Starting Daily apt download activities...
+<30>Oct 11 22:16:32 srv-app-01 systemd[1]: apt-daily.service: Deactivated successfully.
+<30>Oct 11 22:16:33 srv-app-01 systemd[1]: Finished Daily apt download activities.
+<13>Oct 11 22:17:00 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/docker compose ps
+<13>Oct 11 22:17:15 srv-app-01 sudo:   shady : TTY=pts/0 ; PWD=/home/shady ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+<13>Oct 11 22:17:45 srv-app-01 sudo:   deploy : TTY=pts/1 ; PWD=/opt/siem ; USER=root ; COMMAND=/usr/bin/git pull
+<4>Oct 11 22:18:12 srv-web-01 kernel: [12345.678] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54321 PROTO=TCP SPT=49152 DPT=23 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:15 srv-web-01 kernel: [12348.912] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54322 PROTO=TCP SPT=49153 DPT=445 WINDOW=1024 RES=0x00 SYN URGP=0
+<4>Oct 11 22:18:18 srv-web-01 kernel: [12351.104] [UFW BLOCK] IN=eth0 OUT= MAC=00:11:22:33:44:55:66:77:88:99:aa:bb:08:00 SRC=198.51.100.1 DST=10.0.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=243 ID=54323 PROTO=TCP SPT=49154 DPT=3389 WINDOW=1024 RES=0x00 SYN URGP=0
+<165>Oct 11 22:19:00 srv-auth-01 auditd[800]: Audit daemon rotating log files
+<165>Oct 11 22:19:05 srv-auth-01 auditd[800]: Init complete, auditd 3.0.7 listening for events
+<34>Oct 11 22:20:00 srv-vpn-01 openvpn[2341]: 192.168.1.100:54123 [shady] Peer Connection Initiated with [AF_INET]192.168.1.100:54123
+<34>Oct 11 22:20:02 srv-vpn-01 openvpn[2341]: shady/192.168.1.100:54123 MULTI: Learn: 10.8.0.6 -> shady/192.168.1.100:54123
+<165>1 2026-09-19T04:20:00.123Z srv-k8s-master auditd 1234 ID47 [exampleSDID@32473 iut="3" eventSource="Application"] user root granted sudo
+<134>1 2026-09-19T04:20:05.456Z srv-k8s-node-01 kubelet 2451 ID99 - Started container frontend in pod frontend-6d4b9c8b8-7x8z2
+<134>1 2026-09-19T04:20:08.789Z srv-k8s-node-01 kubelet 2451 ID99 - Container frontend exited with code 0
+<165>1 2026-09-19T04:21:00.000Z srv-db-master postgres 5432 - - LOG: statement: SELECT count(*) FROM siem_events WHERE status = 'active';
+<165>1 2026-09-19T04:21:15.111Z srv-db-master postgres 5432 - - LOG: checkpoint starting: time
+<165>1 2026-09-19T04:21:20.222Z srv-db-master postgres 5432 - - LOG: checkpoint complete: wrote 142 buffers (0.9%); 0 WAL file(s) added, 0 removed, 1 recycled
+MALFORMED_SYSLOG_LINE_MISSING_HEADER_ENTIRELY
+<99999>InvalidPriorityAndMissingFields
