@@ -1,0 +1,54 @@
+Failed password for invalid user admin from 192.168.1.50 port 54321 ssh2
+Failed password for invalid user root from 203.0.113.195 port 42110 ssh2
+Failed password for invalid user test from 198.51.100.88 port 38912 ssh2
+Failed password for invalid user oracle from 45.33.32.156 port 49152 ssh2
+Failed password for invalid user postgres from 185.190.141.2 port 60123 ssh2
+Failed password for invalid user guest from 192.168.1.105 port 51234 ssh2
+Failed password for invalid user ubuntu from 104.248.12.34 port 34567 ssh2
+Failed password for invalid user deploy from 198.51.100.42 port 58211 ssh2
+Failed password for invalid user git from 91.189.91.43 port 41230 ssh2
+Failed password for invalid user ftpuser from 218.92.0.244 port 53128 ssh2
+Failed password for invalid user nagios from 194.26.29.112 port 39482 ssh2
+Failed password for invalid user ansible from 185.220.101.5 port 48192 ssh2
+Failed password for invalid user support from 103.152.220.4 port 51923 ssh2
+Failed password for invalid user developer from 198.51.100.77 port 37194 ssh2
+Failed password for invalid user operator from 178.62.204.101 port 44819 ssh2
+Failed password for shady from 192.168.1.100 port 52140 ssh2
+Failed password for alice from 10.0.1.25 port 49120 ssh2
+Failed password for bob from 172.16.0.15 port 55192 ssh2
+Failed password for charlie from 192.168.1.102 port 48123 ssh2
+Failed password for david from 10.0.2.50 port 53102 ssh2
+Failed password for emily from 172.16.1.80 port 47291 ssh2
+Failed password for frank from 192.168.1.110 port 59281 ssh2
+Failed password for grace from 10.0.3.12 port 38291 ssh2
+Failed password for heidi from 172.16.2.44 port 51920 ssh2
+Failed password for ivan from 192.168.1.120 port 42819 ssh2
+Failed password for judy from 10.0.4.99 port 56192 ssh2
+Accepted publickey for shady from 192.168.1.100 port 52142 ssh2: RSA SHA256:4yV3Z8P1nK9L2mQ7xT5wA0rC6eF8jB4uE1sD3hI5kL7
+Accepted publickey for root from 10.0.0.5 port 2222 ssh2: ED25519 SHA256:7uK2xP9L1mQ5wA0rC4eF8jB3uE2sD1hI4kL6yV8Z0nT
+Accepted publickey for deploy from 172.16.0.10 port 41234 ssh2: RSA SHA256:9xT4wA1rC5eF7jB2uE0sD8hI3kL5yV7Z9nK1L0mQ3wA
+Accepted publickey for alice from 10.0.1.25 port 49122 ssh2: ECDSA SHA256:2mQ6xT8wA0rC4eF6jB1uE9sD7hI2kL4yV6Z8nK0L9mQ
+Accepted publickey for bob from 172.16.0.15 port 55194 ssh2: RSA SHA256:5eF8jB3uE2sD0hI4kL6yV8Z0nK2L1mQ5wA9rC3eF7jB
+Accepted publickey for charlie from 192.168.1.102 port 48125 ssh2: ED25519 SHA256:1uE7sD2hI5kL3yV5Z7nK9L8mQ4wA6rC2eF0jB8uE5sD
+Accepted publickey for ansible from 10.0.0.20 port 39182 ssh2: RSA SHA256:3hI9kL5yV7Z1nK8L0mQ2wA4rC6eF8jB0uE2sD4hI6kL
+Accepted publickey for git from 10.0.0.30 port 44192 ssh2: RSA SHA256:8Z2nK0L7mQ9wA1rC3eF5jB7uE9sD1hI3kL5yV7Z9nK1
+Accepted password for shady from 192.168.1.100 port 52150 ssh2
+Accepted password for operator from 10.0.0.2 port 48190 ssh2
+Accepted password for backup from 10.0.0.15 port 51290 ssh2
+Invalid user admin from 198.51.100.12 port 41290
+Invalid user testuser from 203.0.113.88 port 59123
+Invalid user nagios from 192.168.1.250 port 38192
+Invalid user temp from 185.220.101.10 port 49182
+Invalid user scanner from 45.154.255.89 port 52190
+Received disconnect from 192.168.1.50 port 54321:11: Normal Shutdown [preauth]
+Received disconnect from 203.0.113.195 port 42110:11: Bye Bye [preauth]
+Connection closed by authenticating user root 198.51.100.88 port 38912 [preauth]
+Connection closed by 45.33.32.156 port 49152 [preauth]
+Received disconnect from 185.190.141.2 port 60123:11: Bye Bye [preauth]
+pam_unix(sshd:session): session opened for user shady by (uid=0)
+pam_unix(sshd:session): session closed for user shady
+pam_unix(sshd:session): session opened for user deploy by (uid=0)
+pam_unix(sshd:session): session closed for user deploy
+CORRUPTED_LINE_SSH_GARBAGE_NO_MATCHING_PATTERN_HERE_12345
+Failed ssh connection without any ip or port information
+Accepted something unknown from nowhere
